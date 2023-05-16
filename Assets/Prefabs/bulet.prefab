@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletspeed: 10
-  effect: {fileID: 195792, guid: 89e78efe92dfe5a42837b392cdb0bf9e, type: 3}
+  effect: {fileID: 195792, guid: e780ad30290463448b9ca03cecc068be, type: 3}
   audioSource: {fileID: 6565731128620553424}
 --- !u!64 &278292411704137951
 MeshCollider:

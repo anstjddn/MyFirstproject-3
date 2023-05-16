@@ -11,15 +11,11 @@ public class homeworkbullet : MonoBehaviour
     private int bulletspeed;
     [SerializeField]
     private GameObject effect;
-    [SerializeField]
-    private AudioSource audioSource;
-    private AudioClip audioClip;
 
     private void Awake()
     {
         bulletRb = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
-        audioClip = audioSource.GetComponent<AudioClip>();
+      
     }
     private void Start()
     {
@@ -28,9 +24,7 @@ public class homeworkbullet : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-      
         Instantiate(effect, bulletRb.transform.position, bulletRb.transform.rotation);
-        audioSource.PlayOneShot(audioClip);
         Destroy(gameObject);
     }
 }
