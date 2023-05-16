@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class home : MonoBehaviour
 {
-    public string name;
+  /*  public string name;
     public Rigidbody rigidbody;
     public int value;
 
@@ -13,5 +13,5 @@ public class home : MonoBehaviour
     {
         rigidbody.AddForce(Vector3.up * value, ForceMode.Impulse);
         gameObject.name = name ;
-    }
+    }*/ 
 }
