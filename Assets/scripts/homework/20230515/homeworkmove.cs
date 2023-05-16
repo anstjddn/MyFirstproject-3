@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class homeworkmove : MonoBehaviour
     private Transform bulletpoint;
     [SerializeField]
     private float repeatTime;
+    [SerializeField]
+    private AudioClip Fireaudio;
     private void Awake()
     {
         Rb = GetComponent<Rigidbody>();
@@ -43,6 +46,7 @@ public class homeworkmove : MonoBehaviour
     private void OnFire(InputValue value)
     {
         Instantiate(bullet, bulletpoint.transform.position, bulletpoint.transform.rotation);
+        Instantiate(Fireaudio);
     }
     private void OnRepeatFire(InputValue value)
     {
@@ -55,13 +59,30 @@ public class homeworkmove : MonoBehaviour
             StopCoroutine(corotine);
         }
     }
+ 
+
     private Coroutine corotine;
     IEnumerator repeatcorotine()
     {
         while (true)
         {
             Instantiate(bullet, bulletpoint.transform.position, bulletpoint.transform.rotation);
+            Instantiate(Fireaudio);
             yield return new WaitForSeconds(repeatTime);
+        }
+    }
+
+
+    private void OnShift(InputValue vlaue)
+    {
+        if (vlaue.isPressed)
+        {
+            Rb.GetComponentInChildren<CinemachineVirtualCamera>().Priority = 20;
+
+        }
+        else
+        { 
+            Rb.GetComponentInChildren<CinemachineVirtualCamera>().Priority = 5; 
         }
     }
 }
