@@ -10,6 +10,8 @@ public class homeworkbullet : MonoBehaviour
     private int bulletspeed;
     [SerializeField]
     private GameObject effect;
+    [SerializeField]
+    private AudioClip Collisionsound;
     private void Awake()
     {
         bulletRb = GetComponent<Rigidbody>();
@@ -23,6 +25,7 @@ public class homeworkbullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Instantiate(effect, bulletRb.transform.position, bulletRb.transform.rotation);
+        Instantiate(Collisionsound);
         Destroy(gameObject);
     }
 }
