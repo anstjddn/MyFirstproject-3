@@ -18,8 +18,7 @@ public class homeworkmove : MonoBehaviour
     private Transform bulletpoint;
     [SerializeField]
     private float repeatTime;
-    [SerializeField]
-    private AudioClip Fireaudio;
+  
     private void Awake()
     {
         Rb = GetComponent<Rigidbody>();
@@ -46,7 +45,7 @@ public class homeworkmove : MonoBehaviour
     private void OnFire(InputValue value)
     {
         Instantiate(bullet, bulletpoint.transform.position, bulletpoint.transform.rotation);
-        Instantiate(Fireaudio);
+       
     }
     private void OnRepeatFire(InputValue value)
     {
@@ -67,7 +66,7 @@ public class homeworkmove : MonoBehaviour
         while (true)
         {
             Instantiate(bullet, bulletpoint.transform.position, bulletpoint.transform.rotation);
-            Instantiate(Fireaudio);
+           
             yield return new WaitForSeconds(repeatTime);
         }
     }

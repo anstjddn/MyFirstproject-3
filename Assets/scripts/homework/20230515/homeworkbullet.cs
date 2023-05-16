@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class homeworkbullet : MonoBehaviour
 {
@@ -11,21 +12,25 @@ public class homeworkbullet : MonoBehaviour
     [SerializeField]
     private GameObject effect;
     [SerializeField]
-    private AudioClip Collisionsound;
+    private AudioSource audioSource;
+    private AudioClip audioClip;
+
     private void Awake()
     {
         bulletRb = GetComponent<Rigidbody>();
-
+        audioSource = GetComponent<AudioSource>();
+        audioClip = audioSource.GetComponent<AudioClip>();
     }
     private void Start()
     {
         bulletRb.velocity = transform.forward * bulletspeed;
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 2f);
     }
     private void OnCollisionEnter(Collision collision)
     {
+      
         Instantiate(effect, bulletRb.transform.position, bulletRb.transform.rotation);
-        Instantiate(Collisionsound);
+        audioSource.PlayOneShot(audioClip);
         Destroy(gameObject);
     }
 }
