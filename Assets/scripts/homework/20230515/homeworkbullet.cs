@@ -15,7 +15,6 @@ public class homeworkbullet : MonoBehaviour
     private void Awake()
     {
         bulletRb = GetComponent<Rigidbody>();
-      
     }
     private void Start()
     {
@@ -26,5 +25,6 @@ public class homeworkbullet : MonoBehaviour
     {
         Instantiate(effect, bulletRb.transform.position, bulletRb.transform.rotation);
         Destroy(gameObject);
+
     }
 }
