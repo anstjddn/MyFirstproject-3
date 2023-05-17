@@ -50,6 +50,11 @@ public class homeworkmove : MonoBehaviour
         Instantiate(bullet, bulletpoint.transform.position, bulletpoint.transform.rotation);
         animator.SetTrigger("Fire");
     }
+    public void Fire()
+    {
+        Instantiate(bullet, bulletpoint.transform.position, bulletpoint.transform.rotation);
+        animator.SetTrigger("Fire");
+    }
     private void OnRepeatFire(InputValue value)
     {
         if (value.isPressed)
