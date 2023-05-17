@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMeruScene.unity
+    guid: a7a02b88cf6198b46bd527f9d8b0d6d8
+  - enabled: 1
+    path: Assets/Scenes/20230516.unity
+    guid: b1d2f63f50669ab4b87446f054e57a3f
   m_configObjects: {}

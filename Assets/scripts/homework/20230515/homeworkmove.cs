@@ -18,10 +18,13 @@ public class homeworkmove : MonoBehaviour
     private Transform bulletpoint;
     [SerializeField]
     private float repeatTime;
-  
+
+    private Animator animator;
+
     private void Awake()
     {
         Rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -45,13 +48,19 @@ public class homeworkmove : MonoBehaviour
     private void OnFire(InputValue value)
     {
         Instantiate(bullet, bulletpoint.transform.position, bulletpoint.transform.rotation);
-       
+        animator.SetTrigger("Fire");
+    }
+    public void Fire()
+    {
+        Instantiate(bullet, bulletpoint.transform.position, bulletpoint.transform.rotation);
+        animator.SetTrigger("Fire");
     }
     private void OnRepeatFire(InputValue value)
     {
         if (value.isPressed)
         {
             corotine = StartCoroutine(repeatcorotine());
+            
         }
         else
         {
@@ -66,7 +75,7 @@ public class homeworkmove : MonoBehaviour
         while (true)
         {
             Instantiate(bullet, bulletpoint.transform.position, bulletpoint.transform.rotation);
-           
+            animator.SetTrigger("Fire");
             yield return new WaitForSeconds(repeatTime);
         }
     }
