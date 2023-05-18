@@ -25,4 +25,5 @@ public class SoundOption : MonoBehaviour
 
     }
 
+    // 이건 나중에 구현해도될듯?
 }
