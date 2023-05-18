@@ -135,10 +135,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
     - target: {fileID: 4638517309143642055, guid: 79941a29377de514e9c4800ab575306d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4638517309143642055, guid: 79941a29377de514e9c4800ab575306d, type: 3}
       propertyPath: repeatTime
       value: 0.25
       objectReference: {fileID: 0}
@@ -242,8 +238,7 @@ PrefabInstance:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4638517309143642055, guid: 79941a29377de514e9c4800ab575306d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79941a29377de514e9c4800ab575306d, type: 3}
 --- !u!1 &163878508
 GameObject:
@@ -462,7 +457,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1259706133}
         m_TargetAssemblyTypeName: homeworkmove, Assembly-CSharp
         m_MethodName: Fire
         m_Mode: 1
@@ -858,6 +853,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5770578248127383871, guid: 79941a29377de514e9c4800ab575306d, type: 3}
   m_PrefabInstance: {fileID: 136465759}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1259706133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4638517309143642055, guid: 79941a29377de514e9c4800ab575306d, type: 3}
+  m_PrefabInstance: {fileID: 136465759}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259706130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013ce2d50711a1e48ba37725249808c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1259706137
 Animator:
   serializedVersion: 5
@@ -879,50 +885,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1259706143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1259706130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 241da4660aeb35941a29cd7f1cc8fbfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movespeed: 5
-  Rotatespeed: 90
---- !u!114 &1259706144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1259706130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9171e4d52ff3891459aa58dfc9710a83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 5644168364813259210, guid: ca98f845030f8fe41abde4b48b9b9fdd, type: 3}
-  repeatTime: 0.25
-  bulletpoint: {fileID: 1829145092}
-  OnFired:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1434902141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,7 +1198,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740685396}
-  m_LocalRotation: {x: 0.35440868, y: 0.53017116, z: -0.25902188, w: 0.7254107}
+  m_LocalRotation: {x: 0.35440865, y: 0.53017116, z: -0.2590219, w: 0.7254107}
   m_LocalPosition: {x: -27.032244, y: 37.131893, z: -16.463158}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1245,11 +1207,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1829145092 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5603564467563473235, guid: 79941a29377de514e9c4800ab575306d, type: 3}
-  m_PrefabInstance: {fileID: 136465759}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1882484099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1284,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882484099}
-  m_LocalRotation: {x: 0.35440868, y: 0.53017116, z: -0.25902188, w: 0.7254107}
+  m_LocalRotation: {x: 0.35440865, y: 0.53017116, z: -0.2590219, w: 0.7254107}
   m_LocalPosition: {x: -27.032244, y: 37.131893, z: -16.463158}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
