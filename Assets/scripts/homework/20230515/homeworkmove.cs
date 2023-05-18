@@ -49,11 +49,13 @@ public class homeworkmove : MonoBehaviour
     {
         Instantiate(bullet, bulletpoint.transform.position, bulletpoint.transform.rotation);
         animator.SetTrigger("Fire");
+        GameManager.Data.AddShootCount(1);
     }
     public void Fire()
     {
         Instantiate(bullet, bulletpoint.transform.position, bulletpoint.transform.rotation);
         animator.SetTrigger("Fire");
+        GameManager.Data.AddShootCount(1);
     }
     private void OnRepeatFire(InputValue value)
     {
@@ -76,6 +78,7 @@ public class homeworkmove : MonoBehaviour
         {
             Instantiate(bullet, bulletpoint.transform.position, bulletpoint.transform.rotation);
             animator.SetTrigger("Fire");
+            GameManager.Data.AddShootCount(1);
             yield return new WaitForSeconds(repeatTime);
         }
     }

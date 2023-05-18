@@ -14,14 +14,14 @@ public class SoundOption : MonoBehaviour
     [SerializeField]
     public Slider SFXSlider;
 
-    public void matervolume()
+    public void  setmatervolume()
     {
-        audioMixer.SetFloat("Master", MaterSlider.value * 50);
+        audioMixer.SetFloat("Master", Mathf.Log(MaterSlider.value) * 20);
 
     }
-    public void SFXvolume()
+    public void setSFXvolume()
     {
-        audioMixer.SetFloat("SFX", SFXSlider.value * 50);
+        audioMixer.SetFloat("SFX", Mathf.Log(SFXSlider.value) * 20);
 
     }
 
