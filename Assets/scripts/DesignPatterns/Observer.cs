@@ -6,7 +6,7 @@ using UnityEngine;
 //##		디자인 패턴 Observer			##
 //========================================
 /*
-	옵저버 패턴 :
+	옵저버 패턴 :				// 콜벡방식
 	옵저버는 객체의 상태 변화를 관찰하는 관찰자
 	관찰대상객체는 옵저버들의 목록을 등록하여 보관
 	관찰대상객체에 상태 변화가 있을 때마다 등록한 옵저버들에게 알림
@@ -28,5 +28,29 @@ using UnityEngine;
 
 public class Observer
 {
-    
+    public void Notify() { }
 }
+
+public class Subject
+{
+    private List<Observer> observerList;
+
+    public void RegisterObserver(Observer observer)
+    {
+        observerList.Add(observer);
+    }
+
+    public void UnregisterObserver(Observer observer)
+    {
+        observerList.Remove(observer);
+    }
+
+    private void NotifyObserver()
+    {
+        foreach (Observer observer in observerList)
+        {
+            observer.Notify();
+        }
+    }
+} 
+

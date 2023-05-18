@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class homeworkmove : MonoBehaviour
@@ -20,6 +21,9 @@ public class homeworkmove : MonoBehaviour
     private float repeatTime;
 
     private Animator animator;
+    
+
+    public UnityEvent OnFired;
 
     private void Awake()
     {
@@ -56,6 +60,7 @@ public class homeworkmove : MonoBehaviour
         Instantiate(bullet, bulletpoint.transform.position, bulletpoint.transform.rotation);
         animator.SetTrigger("Fire");
         GameManager.Data.AddShootCount(1);
+        OnFired?.Invoke();              // 유니티 이벤트 실행
     }
     private void OnRepeatFire(InputValue value)
     {
@@ -96,4 +101,6 @@ public class homeworkmove : MonoBehaviour
             Rb.GetComponentInChildren<CinemachineVirtualCamera>().Priority = 5; 
         }
     }
+    // 유니티 이벤트추가할때 AddListener쓰면됨
+    // 유니티이벤트말고 c#이벤트쓸때는 딜리게이트체인슬때처럼 +=하면됨
 }

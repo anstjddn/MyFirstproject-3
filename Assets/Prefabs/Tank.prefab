@@ -518,6 +518,9 @@ MonoBehaviour:
   bullet: {fileID: 5644168364813259210, guid: ca98f845030f8fe41abde4b48b9b9fdd, type: 3}
   bulletpoint: {fileID: 5603564467563473235}
   repeatTime: 0.1
+  OnFired:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!135 &-8014918136976254301
 SphereCollider:
   m_ObjectHideFlags: 0
